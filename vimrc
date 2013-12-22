@@ -20,6 +20,11 @@ set nocompatible
 set noautochdir
 set noerrorbells
 
+" Disable backup and swapfiles
+set nobackup
+set nowritebackup
+set noswapfile
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
