@@ -55,8 +55,6 @@ map <C-l> <C-W>l
 " Fast stateshift
 ino jk <ESC>
 ino kj <ESC>
-" Disable ESC to learn new things.
-inoremap <ESC> <NOP> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual: 
@@ -80,3 +78,8 @@ syn on
 set background=dark
 colorscheme solarized 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Experimentations: 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+inoremap <ESC> <NOP>
