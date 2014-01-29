@@ -46,44 +46,43 @@ let s:bgred       = '#332323'
 let s:no  = 'NONE'
 let s:it  = 'italic'
 
-Khi 'Normal'        , s:fg0,          s:bg1,         s:no
-Khi 'Cursor'        , s:bg2,          s:fg1,         s:no
-Khi 'CursorLine'    , s:no,           s:bg2,         s:no
-Khi 'LineNr'        , s:bg3,          s:bg2,         s:no
-Khi 'FoldColumn'    , s:bg0,          s:bg2,         s:no
+Khi 'Normal',         s:fg0,          s:bg1,         s:no
+Khi 'Cursor',         s:bg2,          s:fg1,         s:no
+Khi 'CursorLine',     s:no,           s:bg2,         s:no
+Khi 'LineNr',         s:bg3,          s:bg2,         s:no
+Khi 'FoldColumn',     s:bg0,          s:bg2,         s:no
 
-Khi 'VertSplit'     , s:bg3,          s:bg2,         s:no
-Khi 'StatusLine'    , s:bg1,          s:bg3,         s:no
-Khi 'StatusLineNC'  , s:bg1,          s:bg3a,        s:no
-Khi 'Search'        , s:no,           s:bg3,         s:no
-Khi 'Visual'        , s:no,           s:bg3,         s:no
-Khi 'Folded'        , s:bg0,          s:bg2,         s:no
-Khi 'MatchParen'    , s:red,           s:no,         s:no
-Khi 'OverLength'    , s:no,           s:bgred,       s:no
+Khi 'VertSplit',      s:bg3,          s:bg2,         s:no
+Khi 'StatusLine',     s:bg1,          s:bg3,         s:no
+Khi 'StatusLineNC',   s:bg1,          s:bg3a,        s:no
+Khi 'Search',         s:no,           s:bg3,         s:no
+Khi 'Visual',         s:no,           s:bg3,         s:no
+Khi 'Folded',         s:bg0,          s:bg2,         s:no
+Khi 'MatchParen',     s:red,          s:no,          s:no
+Khi 'OverLength',     s:no,           s:bgred,       s:no
 
-
-Khi 'NonText'      , s:bg01,           s:bg01,         s:no
-Khi 'ColorColumn'   , s:red,           s:bg01,         s:no
+Khi 'NonText',        s:bg01,         s:bg01,        s:no
+Khi 'ColorColumn',    s:red,          s:bg01,        s:no
 
 hi! link Todo Special 
 hi! link File Special
 hi! link Title Special
 
-Khi 'Comment'    , s:brown,        s:no,          s:it
-Khi 'Identifier' , s:blue1,        s:no,          s:no
-Khi 'Type'       , s:blue0,        s:no,          s:no
+Khi 'Comment',     s:brown,        s:no,          s:it
+Khi 'Identifier',  s:blue1,        s:no,          s:no
+Khi 'Type',        s:blue0,        s:no,          s:no
 
 hi! link Number Type
 hi! link Boolean Type
 
-Khi 'Function'   , s:tan,          s:no,          s:no
+Khi 'Function',    s:tan,          s:no,          s:no
 
-Khi 'Statement'  , s:orange,       s:no,          s:no
-Khi 'String'     , s:green0,       s:no,          s:no
+Khi 'Statement',   s:orange,       s:no,          s:no
+Khi 'String',      s:green0,       s:no,          s:no
 
-Khi 'PreProc'    , s:orange,       s:no,          s:no
+Khi 'PreProc',     s:orange,       s:no,          s:no
 
-Khi 'SignColumn' , s:no,           s:bg2,         s:no
+Khi 'SignColumn',  s:no,           s:bg2,         s:no
 
 Khi 'SyntasticErrorSign', s:red, s:bg2, s:no
 Khi 'SyntasticWarningSign',  s:purble, s:bg2, s:no
