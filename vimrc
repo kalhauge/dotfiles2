@@ -31,6 +31,7 @@ set noswapfile
 
 " Easy access to the vimrc file 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>hv :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Enable moving of lines
@@ -128,15 +129,20 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 syn on
 
-set background=dark
-colorscheme solarized 
+nnoremap <leader>z zMzvzz
+
+nnoremap <leader>ss :syntax sync fromstart<cr>
+
+if !has('gui_running')
+    set background=dark
+    colorscheme solarized 
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extras:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-
+noremap <leader>t :split ~/.vim/todo.rst<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimentations: 
