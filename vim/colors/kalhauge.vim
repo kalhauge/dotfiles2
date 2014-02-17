@@ -57,7 +57,7 @@ Khi 'StatusLine',     s:bg1,          s:bg3,         s:no
 Khi 'StatusLineNC',   s:bg1,          s:bg3a,        s:no
 Khi 'Search',         s:no,           s:bg3,         s:no
 Khi 'Visual',         s:no,           s:bg3,         s:no
-Khi 'Folded',         s:bg0,          s:bg2,         s:no
+Khi 'Folded',         s:purble,       s:bg2,         s:no
 Khi 'MatchParen',     s:red,          s:no,          s:no
 Khi 'OverLength',     s:no,           s:bgred,       s:no
 
