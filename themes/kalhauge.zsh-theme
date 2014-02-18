@@ -26,7 +26,7 @@ FINE=$GREEN
 
 # LOAD UTILS
 
-. ~/.themes/git.zsh $WHITE $BLUE $MAGENTA $WHITE
+. ~/.themes/git.zsh $GREEN $YELLOW $RED $WHITE
 
 # LOCAL
 
@@ -44,16 +44,29 @@ function arrow () {
 }
 
 function git_info() {
-    if [[ "$(parse_git_dirty)" == "*" ]]; then
-        echo -n "$BG_RED$WHITE $(current_branch) $(git_time_since_commit) $RESET"
-    else; 
-        echo -n "$BG_GREEN$BLACK $(current_branch) $RESET"
+    if [[ -n $(current_branch) ]]; then
+        if [[ "$(parse_git_dirty)" == "*" ]]; then
+            echo -n "at $RED$(current_branch)$RESET $(git_time_since_commit)$RESET"
+        else; 
+            echo -n "at $GREEN$(current_branch)$RESET"
+        fi
     fi
-    echo -n 
+}
+
+function user() {
+    echo -n "$RED%n$RESET"
+}
+
+function host() {
+    echo -n "$YELLOW%M$RESET"
+}
+
+function directory() {
+    echo -n "$GREEN${$(pwd)/$HOME/~}$RESET"
 }
 
 function info_line() {
-  echo -n '$GREEN%n$RESET@$RED%M$RESET $(git_info) $BROWN${$(pwd)/$HOME/~}'
+  echo -n '$(user) at $(host) in $(directory) $(git_info):'
 }
 
 function command_line() {
