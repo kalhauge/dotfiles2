@@ -46,9 +46,9 @@ function arrow () {
 function git_info() {
     if [[ -n $(current_branch) ]]; then
         if [[ "$(parse_git_dirty)" == "*" ]]; then
-            echo -n "at $RED$(current_branch)$RESET $(git_time_since_commit)$RESET"
+            echo -n " at $RED$(current_branch)$RESET $(git_time_since_commit)$RESET"
         else; 
-            echo -n "at $GREEN$(current_branch)$RESET"
+            echo -n " at $GREEN$(current_branch)$RESET"
         fi
     fi
 }
@@ -66,7 +66,7 @@ function directory() {
 }
 
 function info_line() {
-  echo -n '$(user) at $(host) in $(directory) $(git_info):'
+  echo -n '$(user) at $(host) in $(directory)$(git_info):'
 }
 
 function command_line() {
