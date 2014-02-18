@@ -61,12 +61,6 @@ alias -g myip=`echo $LOCAL_IP`
 
 # Functions
 
-update_local_ip() {
-   export LOCAL_IP=`ifconfig | grep inet | grep -v inet6 | grep -v 127.0.0.1 -m 1 | awk '{ print $2}'`
-   echo $LOCAL_IP
-}
-
-update_local_ip
 autoload -Uz promptinit
 promptinit -i
 if [[ $1 == eval ]]

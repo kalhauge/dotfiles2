@@ -135,7 +135,8 @@ nnoremap <leader>ss :syntax sync fromstart<cr>
 
 if !has('gui_running')
     set background=dark
-    colorscheme solarized 
+    colorscheme twilight
+    " colorscheme solarized 
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

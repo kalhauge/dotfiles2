@@ -2,24 +2,35 @@
 # Kalhauge's special theme.
 # By Christian Gram Kalhauge
 
+
 # DEFINING COLORS
 
-DANGER="%{$fg[red]%}"
-
-FINE="%{$fg[green]%}"
-
-GIT_FINE="%{$bg[green]$fg[black]%}"
-GIT_WARNING="%{$bg[yellow]$fg[black]%}"
-
-IPCOLOR="%{$fg_no_bold[white]%}"
-HOSTCOLOR="%{$fg[blue]%}"
-USERCOLOR="%{$fg[magenta]%}"
-DIRCOLOR="%{$fg[yellow]%}"
-
-N="%{$fg[white]%}"
+RED="%{$fg[red]%}"
+YELLOW="%{$fg[yellow]%}"
+GREEN="%{$fg[green]%}"
+CYAN="%{$fg[cyan]%}"
+BROWN="%{$fg[green]%}"
+BG_ORANGE="%{$bg[yellow]%}"
+BG_RED="%{$bg[red]%}"
+BG_GREEN="%{$bg[green]%}"
 
 
-arrow () {
+RESET="%{$reset_color%}"
+
+DANGER=$RED
+FINE=$GREEN
+
+# LOAD UTILS
+
+. ~/.themes/git.zsh $GREEN $YELLOW $GREEN $CYAN
+
+# LOCAL
+
+function clr() {
+    echo -n "%{$*%}"
+}
+
+function arrow () {
   if [ $# = "#" ]; 
     then COLOR=$DANGER
   else; COLOR=$FINE
@@ -28,29 +39,24 @@ arrow () {
   printf '\U2192'
 }
 
-function git_color () {
-  local COLOR=$GIT_FINE
-  [[ $(git status -s 2> /dev/null ) != "" ]] && COLOR=$GIT_WARNING
-  echo -n $COLOR 
+function git_info() {
+    if [[ "$(parse_git_dirty)" == "*" ]]; then
+        echo -n "$BG_RED"
+    else; 
+        echo -n "$BG_GREEN"
+    fi
+    echo -n "$(current_branch)$(git_time_since_commit)$RESET"
 }
 
-git_info () {
-  local ref
-  ref=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3 ) 
-  if [ "$ref" !=  "" ]; then;
-    echo "$(git_color) $ref %{$reset_color%} "
-  fi
+function info_line() {
+  echo -n '$GREEN$USER$RESET@$RED$(hostname)$RESET $(git_info) $BROWN${$(pwd)/$HOME/~}'
 }
 
-info_line() {
-  echo '%{$bg[black]%}$HOSTCOLOR%m[${IPCOLOR}$(update_local_ip)${HOSTCOLOR}] ${N}: $USERCOLOR%n $(git_info)\n$DIRCOLOR%~ $reset_color'
-}
-
-command_line() {
-  echo '$(arrow) %{$reset_color%}'
+function command_line() {
+  echo -n '$(arrow) %{$reset_color%}'
 }
 
 PROMPT=$(print "$(info_line)\n$(command_line)")
 
-#RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
+
 
