@@ -21,6 +21,8 @@ BG_GREEN="%{$bg[green]%}"
 
 RESET="%{$reset_color%}"
 
+PATH_LEN=40
+
 DANGER=$RED
 FINE=$GREEN
 
@@ -62,7 +64,8 @@ function host() {
 }
 
 function directory() {
-    echo -n "$GREEN${$(pwd)/$HOME/~}$RESET"
+    folder=${$(pwd)/$HOME/~}
+    echo -n "$GREEN%$PATH_LEN<...<$folder%<<$RESET"
 }
 
 function info_line() {
