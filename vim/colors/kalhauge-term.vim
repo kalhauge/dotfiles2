@@ -10,67 +10,75 @@ if exists("syntax_on")
 endif
 let g:colors_name = "kalhauge-term"
 
+" Setup terms
+
+let s:italic     = 'italic'
+let s:bold       = 'bold'
+let s:none       = 'none'
 
 " Setup colors
 
-let s:no             = ['NONE', 'NONE', 'NONE']
-let s:black = [ '0 ', 'Black'  ]
-let s:darkblue = [ '1 ', 'DarkBlue'  ]
-let s:darkgreen = [ '2 ', 'DarkGreen' ]
-let s:darkcyan = [ '3 ', 'DarkCyan' ]
-let s:darkred = [ '4 ', 'DarkRed' ]
-let s:darkmagenta = [ '5 ', 'DarkMagenta' ]
-let s:brown = [ '6 ', 'Brown' ]
-let s:lightgray = [ '7 ', 'LightGray' ]
-let s:darkgray = [ '8 ', 'DarkGray' ]
-let s:blue = [ '9 ', 'Blue' ]
-let s:green = [ '10', 'Green' ]
-let s:cyan = [ '11', 'Cyan' ]
-let s:red = [ '12', 'Red' ]
-let s:magenta = [ '13', 'Magenta' ]
-let s:yellow = [ '14', 'Yellow' ]
-let s:white = [ '15', 'White' ]
+let s:no          = ['NONE', 'NONE', 'NONE']
 
-" let s:light_black    = ('#000000', 'black'  , '0')
-" let s:light_white    = ('#000000', 'white'  , '1')
-" let s:light_green    = ('#000000', 'green'  , '2')
-" let s:light_yellow   = ('#000000', 'yellow' , '3')
-" let s:light_red      = ('#000000', 'red'    , '4')
-" let s:light_cyan     = ('#000000', 'cyan'   , '5')
-" let s:light_megenta  = ('#000000', 'magenta', '6')
+let s:black       = [ '0', 'Black'  ]
+let s:darkred     = [ '1', 'DarkRed' ]
+let s:darkgreen   = [ '2', 'DarkGreen' ]
+let s:brown       = [ '3', 'Brown' ]
+let s:darkblue    = [ '4', 'DarkBlue'  ]
+let s:darkmagenta = [ '5', 'DarkMagenta' ]
+let s:darkcyan    = [ '6', 'DarkCyan' ]
+let s:lightgray   = [ '7 ', 'LightGray' ]
+
+let s:darkgray    = [ '8', 'DarkGray' ]
+let s:red         = [ '9', 'Red' ]
+let s:green       = [ '10', 'Green' ]
+let s:yellow      = [ '11', 'Yellow' ]
+let s:blue        = [ '12', 'Blue' ]
+let s:magenta     = [ '13', 'Magenta' ]
+let s:cyan        = [ '14', 'Cyan' ]
+let s:white       = [ '15', 'White' ]
 
 " Setup diffent tags
 
-function! KHL(tag, fg, bg)
-   exec 'hi '.a:tag.' ctermfg='.a:fg[0].' ctermbg='.a:bg[0]
+function! KHL(tag, type, fg, bg)
+    let s:x = 0
+    exec 'hi '.a:tag.' cterm='.a:type.' ctermfg='.a:fg[s:x].' ctermbg='.a:bg[s:x]
 endfunction
 
 command! -nargs=+ Khi call KHL(<args>)
 
-Khi 'Normal',      s:white, s:no
-Khi 'Cursor',      s:lightgray, s:darkgray
-Khi 'CursorLine',  s:no, s:darkgray
-Khi 'LineNr',      s:black, s:darkgray
+Khi 'Normal',         s:none, s:white, s:no
+Khi 'Cursor',         s:none, s:lightgray, s:darkgray
+Khi 'CursorLine',     s:none, s:no, s:darkgray
+Khi 'LineNr',         s:none, s:black, s:darkgray
 
-Khi 'VertSplit',      s:lightgray, s:darkgray
-Khi 'StatusLine',     s:lightgray, s:darkgray
-Khi 'StatusLineNC',   s:black, s:darkgray
+Khi 'VertSplit',      s:none, s:lightgray, s:darkgray
+Khi 'StatusLine',     s:none, s:lightgray, s:darkgray
+Khi 'StatusLineNC',   s:none, s:black, s:darkgray
 
-Khi 'Search',         s:darkgray,           s:darkgreen
-Khi 'Visual',         s:no,           s:darkgray
+Khi 'Search',         s:none, s:darkgray, s:darkgreen
+Khi 'Visual',         s:none, s:no, s:darkgray
 
-Khi 'OverLength',     s:darkred,           s:no
+Khi 'OverLength',     s:none, s:darkred, s:no
 
-Khi 'MatchParen',     s:red,          s:no 
-Khi 'Folded',         s:darkmagenta,       s:no
+Khi 'MatchParen',     s:none, s:red, s:no 
+Khi 'Folded',         s:none, s:darkmagenta, s:no
 
-Khi 'ColorColumn', s:no, s:darkgray
+Khi 'ColorColumn',    s:none, s:no, s:darkgray
 
-Khi "Comment",  s:yellow,  s:no 
-Khi "String",  s:green,  s:no 
+Khi "Comment",        s:none, s:yellow, s:no 
+Khi "String",         s:none, s:green, s:no 
 
-Khi "Function", s:brown, s:no
-Khi "Type", s:darkblue, s:no
-Khi "Indentifier", s:blue, s:no
+Khi "Function",       s:none, s:yellow, s:no
+Khi "Type",           s:bold, s:darkblue, s:no
+Khi "Indentifier",    s:none, s:blue, s:no
+Khi "Statement",      s:none, s:brown, s:no
 
-Khi "Statement", s:yellow, s:no
+Khi "Error",          s:none, s:no, s:darkred
+Khi "Special",        s:bold, s:red, s:no
+
+hi! link Number Type
+hi! link Boolean Type
+hi! link Todo Special 
+hi! link File Special
+hi! link Title Special
