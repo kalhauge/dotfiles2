@@ -82,6 +82,15 @@ Khi "PreProc",        s:bold, s:darkred, s:no
 Khi "Error",          s:none, s:no, s:darkred
 Khi "Special",        s:bold, s:red, s:no
 
+Khi "DiffAdd",        s:none, s:no, s:darkgreen
+Khi "DiffChange",     s:none, s:no, s:yellow
+Khi "DiffDelete",     s:none, s:no, s:darkred
+Khi "DiffText",       s:none, s:no, s:white
+
+Khi "diffAdded",      s:none, s:darkgreen, s:no
+Khi "diffRemoved",    s:none, s:darkred, s:no
+Khi "diffChanged",    s:none, s:brown, s:no
+
 hi! link Number Type
 hi! link Boolean Type
 hi! link Todo Special 
