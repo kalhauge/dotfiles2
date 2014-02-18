@@ -5,11 +5,15 @@
 
 # DEFINING COLORS
 
+BLACK="%{$fg[black]%}"
+WHITE="%{$fg[white]%}"
 RED="%{$fg[red]%}"
 YELLOW="%{$fg[yellow]%}"
 GREEN="%{$fg[green]%}"
 CYAN="%{$fg[cyan]%}"
 BROWN="%{$fg[green]%}"
+MAGENTA="%{$fg[magenta]%}"
+
 BG_ORANGE="%{$bg[yellow]%}"
 BG_RED="%{$bg[red]%}"
 BG_GREEN="%{$bg[green]%}"
@@ -22,7 +26,7 @@ FINE=$GREEN
 
 # LOAD UTILS
 
-. ~/.themes/git.zsh $GREEN $YELLOW $GREEN $CYAN
+. ~/.themes/git.zsh $WHITE $BLUE $MAGENTA $WHITE
 
 # LOCAL
 
@@ -41,15 +45,15 @@ function arrow () {
 
 function git_info() {
     if [[ "$(parse_git_dirty)" == "*" ]]; then
-        echo -n "$BG_RED"
+        echo -n "$BG_RED$WHITE $(current_branch) $(git_time_since_commit) $RESET"
     else; 
-        echo -n "$BG_GREEN"
+        echo -n "$BG_GREEN$BLACK $(current_branch) $RESET"
     fi
-    echo -n "$(current_branch)$(git_time_since_commit)$RESET"
+    echo -n 
 }
 
 function info_line() {
-  echo -n '$GREEN$USER$RESET@$RED$(hostname)$RESET $(git_info) $BROWN${$(pwd)/$HOME/~}'
+  echo -n '$GREEN%n$RESET@$RED%M$RESET $(git_info) $BROWN${$(pwd)/$HOME/~}'
 }
 
 function command_line() {
