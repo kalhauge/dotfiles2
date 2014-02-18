@@ -50,22 +50,22 @@ endfunction
 
 command! -nargs=+ Khi call KHL(<args>)
 
-Khi 'Normal',         s:none, s:white, s:black
-Khi 'Cursor',         s:none, s:black, s:lightgray
-Khi 'CursorLine',     s:none, s:no, s:darkgray
-Khi 'LineNr',         s:none, s:black, s:darkgray
+Khi 'Normal',         s:none, s:lightgray, s:black
+Khi 'Cursor',         s:none, s:black,     s:lightgray
+Khi 'CursorLine',     s:none, s:no,        s:darkgray
+Khi 'LineNr',         s:none, s:darkgray,  s:black
 
 Khi 'VertSplit',      s:none, s:lightgray, s:darkgray
 Khi 'StatusLine',     s:none, s:lightgray, s:darkgray
-Khi 'StatusLineNC',   s:none, s:black, s:darkgray
+Khi 'StatusLineNC',   s:none, s:black,     s:darkgray
 
-Khi 'Search',         s:none, s:darkgray, s:darkgreen
-Khi 'Visual',         s:none, s:no, s:darkgray
+Khi 'Search',         s:none, s:darkgray,  s:darkgreen
+Khi 'Visual',         s:none, s:no,        s:darkgray
 
-Khi 'OverLength',     s:none, s:darkred, s:no
+Khi 'OverLength',     s:none, s:darkred,   s:no
 
 Khi 'MatchParen',     s:none, s:red, s:no 
-Khi 'Folded',         s:none, s:darkmagenta, s:no
+Khi 'Folded',         s:none, s:darkmagenta, s:darkgray
 
 Khi 'ColorColumn',    s:none, s:no, s:darkgray
 

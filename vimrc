@@ -50,7 +50,8 @@ set expandtab
 nnoremap <leader>rh yypVr
 
 set tw=80
-execute "set colorcolumn=+" . join(range(1,200), ',+')
+" execute "set colorcolumn=+" . join(range(1,200), ',+')
+set colorcolumn=80
 
 set completeopt+=longest
 
