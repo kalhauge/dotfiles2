@@ -2,7 +2,7 @@
 " set fuoptions=maxvert,maxhorz
 " au GUIEnter * set fullscreen
 
-colorscheme kalhauge
+colorscheme kalhauge-term
 
 set guioptions=ap
 
