@@ -2,7 +2,6 @@
 "
 " Name:        kalhauge-term.vim
 " Maintainer:  Christian Kalhauge 
-
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -64,8 +63,8 @@ Khi 'Visual',         s:none, s:no,        s:darkgray
 
 Khi 'OverLength',     s:none, s:darkred,   s:no
 
-Khi 'MatchParen',     s:none, s:red, s:no 
-Khi 'Folded',         s:none, s:darkmagenta, s:darkgray
+Khi 'MatchParen',     s:none, s:red, s:no
+Khi 'Folded',         s:none, s:darkmagenta, s:black
 
 Khi 'ColorColumn',    s:none, s:no, s:darkgray
 
@@ -79,7 +78,7 @@ Khi "Statement",      s:none, s:brown, s:no
 
 Khi "PreProc",        s:bold, s:darkred, s:no
 
-Khi "Error",          s:none, s:no, s:darkred
+Khi "Error",          s:none, s:darkred, s:no
 Khi "Special",        s:bold, s:red, s:no
 
 Khi "DiffAdd",        s:none, s:no, s:darkgreen
@@ -91,8 +90,12 @@ Khi "diffAdded",      s:none, s:darkgreen, s:no
 Khi "diffRemoved",    s:none, s:darkred, s:no
 Khi "diffChanged",    s:none, s:brown, s:no
 
+Khi "qfLineNr",       s:none, s:green, s:no
+
 hi! link Number Type
 hi! link Boolean Type
 hi! link Todo Special 
 hi! link File Special
 hi! link Title Special
+
+match OverLength /\%82v.*/
