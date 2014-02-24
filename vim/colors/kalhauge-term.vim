@@ -14,6 +14,7 @@ let g:colors_name = "kalhauge-term"
 let s:italic     = 'italic'
 let s:bold       = 'bold'
 let s:none       = 'none'
+let s:reverse    = 'reverse'
 
 " Setup colors
 
@@ -50,7 +51,8 @@ endfunction
 command! -nargs=+ Khi call KHL(<args>)
 
 Khi 'Normal',         s:none, s:lightgray, s:black
-Khi 'Cursor',         s:none, s:black,     s:lightgray
+" Khi 'Cursor',         s:reverse, s:black,     s:lightgray
+" Khi 'iCursor',        s:reverse, s:black,     s:brown
 Khi 'CursorLine',     s:none, s:no,        s:darkgray
 Khi 'LineNr',         s:none, s:darkgray,  s:black
 
@@ -71,6 +73,8 @@ Khi 'ColorColumn',    s:none, s:no, s:darkgray
 Khi "Comment",        s:none, s:yellow, s:no 
 Khi "String",         s:none, s:darkgreen, s:no 
 
+
+Khi "Constant",       s:none, s:darkcyan, s:no 
 Khi "Function",       s:none, s:yellow, s:no
 Khi "Type",           s:bold, s:darkblue, s:no
 Khi "Indentifier",    s:none, s:blue, s:no

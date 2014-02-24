@@ -7,9 +7,9 @@ colorscheme kalhauge-term
 set guioptions=ap
 
 if has('gui_gtk2')
-    set guifont=Inconsolata\ 13
+    set guifont=Inconsolata\ 12
 elseif has('gui_macvim')
-    set guifont=Inconsolata:h13
+    set guifont=Inconsolata:h12
 endif
 
 
