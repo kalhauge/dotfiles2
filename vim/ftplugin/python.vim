@@ -21,6 +21,7 @@ function! Init_args(arg, indent)
 endfunction
 
 let g:pymode_doc = 0
+let g:pymode_pyhton = 'python3'
 let g:pymode_rope = 1
 let g:pymode_rope_rename_bind = '<leader>rr'
 let g:pymode_rope_organize_imports_bind = '<leader>ro'
