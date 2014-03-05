@@ -6,7 +6,7 @@
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 olddir=~/.old-dotfiles
-files="vimrc gvimrc vim zshrc oh-my-zsh themes "
+files="vimrc gvimrc vim zshrc oh-my-zsh themes tmux.conf"
 
 [ -d $olddir ] || mkdir $olddir
 
