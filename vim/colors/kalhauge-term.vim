@@ -26,7 +26,7 @@ let s:darkgreen   = [ '2',  'DarkGreen',  '#87B047']
 let s:brown       = [ '3',  'Brown',      '#FFBF53']
 let s:darkblue    = [ '4',  'DarkBlue',   '#5984A0']
 let s:darkmagenta = [ '5',  'DarkMagenta','#CC59B2']
-let s:darkcyan    = [ '6',  'DarkCyan',   '#ACA9E2']
+let s:darkcyan    = [ '6',  'DarkCyan',   '#ACA9E2'] 
 let s:lightgray   = [ '7',  'LightGray',  '#DAD5D2']
 
 let s:darkgray    = [ '8',  'DarkGray',   '#2F2F2F']
@@ -34,7 +34,7 @@ let s:red         = [ '9',  'Red',        '#B9642A']
 let s:green       = [ '10', 'Green',      '#519F50']
 let s:yellow      = [ '11', 'Yellow',     '#BC9458']
 let s:blue        = [ '12', 'Blue',       '#79ADD3']
-let s:magenta     = [ '13', 'Magenta',    '#292929']
+let s:magenta     = [ '13', 'Magenta',    '#4F4F4F']
 let s:cyan        = [ '14', 'Cyan',       '#D5D6FF']
 let s:white       = [ '15', 'White',      '#FFFFFF']
 
@@ -54,7 +54,7 @@ Khi 'Normal',         s:none, s:lightgray, s:black
 " Khi 'Cursor',         s:reverse, s:black,     s:lightgray
 " Khi 'iCursor',        s:reverse, s:black,     s:brown
 Khi 'CursorLine',     s:none, s:no,        s:darkgray
-Khi 'LineNr',         s:none, s:darkgray,  s:black
+Khi 'LineNr',         s:none, s:magenta,  s:black
 
 Khi 'VertSplit',      s:none, s:lightgray, s:darkgray
 Khi 'StatusLine',     s:none, s:lightgray, s:darkgray
@@ -95,6 +95,8 @@ Khi "diffRemoved",    s:none, s:darkred, s:no
 Khi "diffChanged",    s:none, s:brown, s:no
 
 Khi "qfLineNr",       s:none, s:green, s:no
+
+Khi "Pmenu",          s:none, s:blue, s:darkgray
 
 hi! link Number Type
 hi! link Boolean Type
