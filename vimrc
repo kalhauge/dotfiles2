@@ -164,4 +164,6 @@ inoremap <C-s> <ESC>:w<CR>a
 noremap  <C-s> :w<CR>
 inoremap <ESC> <NOP>
 
+vnoremap <C-c> "+y
+vnoremap <C-a> "+p
 

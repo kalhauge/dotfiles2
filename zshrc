@@ -42,6 +42,10 @@ print "Done"
 
 [ -f ~/.profile ] && source ~/.profile
 
+# Vim setup
+
+
+
 # Python setup.
 alias py3=python3.3
 alias go="git pull && git push"
