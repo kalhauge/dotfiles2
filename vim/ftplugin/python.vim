@@ -20,10 +20,13 @@ function! Init_args(arg, indent)
     return inits
 endfunction
 
+let g:riv_python_rst_hl=1
+
+let g:pymode_python = 'python3'
 let g:pymode = 0
-let g:pymode_doc = 0
-let g:pymode_pyhton = 'python3'
-let g:pymode_rope = 0
+let g:pymode_doc = 1
+let g:pymode_rope = 1
+let g:pymode_syntax_print_as_function = 1
 let g:pymode_rope_rename_bind = '<leader>rr'
 let g:pymode_rope_organize_imports_bind = '<leader>ro'
 let g:pymode_quickfix_minheight = 0

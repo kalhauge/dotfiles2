@@ -34,3 +34,12 @@
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/pydoc_vim"]
+	path = vim/bundle/pydoc_vim
+	url = https://github.com/fs111/pydoc.vim.git
+[submodule "vim/bundle/riv_vim"]
+	path = vim/bundle/riv_vim
+	url = https://github.com/Rykka/riv.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

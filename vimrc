@@ -7,7 +7,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General: {{{
+" General: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call pathogen#runtime_append_all_bundles()
@@ -26,17 +26,30 @@ set nowritebackup
 set noswapfile
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Editing: 
+" Editing:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set wildignore+=*/.git/*,*.class,*.pyc
+
+" NERDTree
+
+let NERDTreeIgnore=['__pycache__', '\.pyc$', '\.o$', '\.class$'] 
 
 " Easy access to the vimrc file 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>hv :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>n  :NERDTree<cr>
+
+" ControlP
+nnoremap <leader>ph :CtrlP $HOME<cr>
+nnoremap <leader>pd :CtrlP $HOME/Develop/<cr>
+nnoremap <leader>pu :CtrlP $HOME/Work/UCLA<cr>
+nnoremap <leader>pt :CtrlP $HOME/Work/DTU<cr>
 
 " Enable moving of lines
-nnoremap ‹ ddjjp
-nnoremap ∆ ddk<S-p>
+nnoremap <M-j> ddjjp
+nnoremap <M-k> ddk<S-p>
 
 " Make spliting feel more naturaly
 set smarttab
@@ -49,7 +62,7 @@ set expandtab
 
 nnoremap <leader>rh yypVr
 
-set tw=80
+set tw=79
 " execute "set colorcolumn=+" . join(range(1,200), ',+')
 " set colorcolumn=80
 
@@ -66,10 +79,10 @@ set hlsearch
 set incsearch
 
 noremap <silent> <leader><space> :nohl<cr>:call clearmatches()<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set scrolloff=7
 
 " Treat long lines as break lines
@@ -94,8 +107,9 @@ set splitright
 noremap n nzzzv
 noremap N Nzzzv
 
-noremap H 0
-noremap L $
+noremap <tab> %
+noremap H ^
+noremap L g_
 
 " Fast stateshift
 ino jk <ESC>
@@ -151,13 +165,13 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extras:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 noremap <leader>t :split ~/.vim/todo.rst<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimentations: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+:nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
+:nnoremap S :exec "normal a".nr2char(getchar())."\e"<CR>
 noremap <return> <c-]>
 
 inoremap <C-s> <ESC>:w<CR>a
@@ -166,4 +180,8 @@ inoremap <ESC> <NOP>
 
 vnoremap <C-c> "+y
 vnoremap <C-a> "+p
+
+cnoremap <C-a> <C-b>
+
+let g:syntastic_always_populate_loc_list = 1
 
