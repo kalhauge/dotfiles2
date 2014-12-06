@@ -65,6 +65,8 @@ alias -g myip=`echo $LOCAL_IP`
 
 # Functions
 
+unset GREP_OPTIONS
+
 autoload -Uz promptinit
 promptinit -i
 if [[ $1 == eval ]]
