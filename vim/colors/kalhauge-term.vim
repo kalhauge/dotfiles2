@@ -85,10 +85,10 @@ Khi "PreProc",        s:bold, s:darkred, s:no
 Khi "Error",          s:none, s:darkred, s:no
 Khi "Special",        s:bold, s:red, s:no
 
-Khi "DiffAdd",        s:none, s:no, s:darkgreen
-Khi "DiffChange",     s:none, s:no, s:yellow
-Khi "DiffDelete",     s:none, s:no, s:darkred
-Khi "DiffText",       s:none, s:no, s:white
+Khi "DiffAdd",        s:none, s:black, s:darkgreen
+Khi "DiffChange",     s:none, s:black, s:yellow
+Khi "DiffDelete",     s:none, s:black, s:darkred
+Khi "DiffText",       s:none, s:black, s:white
 
 Khi "diffAdded",      s:none, s:darkgreen, s:no
 Khi "diffRemoved",    s:none, s:darkred, s:no
