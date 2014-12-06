@@ -4,3 +4,4 @@ if exists("did_load_filetypes")
 endif
 	augroup filetypedetect
 	au BufRead,BufNewFile *.ys setfiletype yices
+        au BufRead,BufNewFile *.fountain set filetype=fountain   
