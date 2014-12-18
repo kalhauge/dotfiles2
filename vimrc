@@ -62,7 +62,8 @@ set expandtab
 
 nnoremap <leader>rh yypVr
 
-set tw=79
+set textwidth=79
+set formatoptions+=t
 " execute "set colorcolumn=+" . join(range(1,200), ',+')
 " set colorcolumn=80
 
@@ -86,8 +87,8 @@ noremap <silent> <leader><space> :nohl<cr>:call clearmatches()<cr>
 set scrolloff=7
 
 " Treat long lines as break lines
-noremap j gj
-noremap k gk
+" noremap j gj
+" noremap k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 noremap <space> /\v
@@ -166,6 +167,17 @@ endif
 " Extras:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <leader>t :split ~/.vim/todo.rst<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Addons:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pandoc#syntax#conceal#use=0
+"" let g:pandoc#syntax#conceal#blacklist=["subscript","superscript","image"]
+let g:tex_conceal= 'adgm'
+
+syn match texMathSymbol '\\land\>' contained conceal cchar=∧
+syn match texMathSymbol '\\lor\>' contained conceal cchar=∨
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimentations: 

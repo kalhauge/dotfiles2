@@ -42,6 +42,9 @@ print "Done"
 
 [ -f ~/.profile ] && source ~/.profile
 
+# Enable fasd
+export _FASD_FUZZY=15
+eval "$(fasd --init auto)"
 # Vim setup
 
 

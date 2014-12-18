@@ -85,6 +85,8 @@ Khi "PreProc",        s:bold, s:darkred, s:no
 Khi "Error",          s:none, s:darkred, s:no
 Khi "Special",        s:bold, s:red, s:no
 
+Khi "Conceal",        s:none, s:no, s:no
+
 Khi "DiffAdd",        s:none, s:black, s:darkgreen
 Khi "DiffChange",     s:none, s:black, s:yellow
 Khi "DiffDelete",     s:none, s:black, s:darkred
