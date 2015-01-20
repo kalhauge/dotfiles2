@@ -43,8 +43,8 @@ let s:white       = [ '15', 'White',      '#FFFFFF']
 function! KHL(tag, type, fg, bg)
     let s:x = 0
     exec 'hi '.a:tag.' cterm='.a:type.' ctermfg='.a:fg[s:x] . '
-    \ ctermbg='.a:bg[s:x] . ' guifg=' . a:fg[2] . ' guibg=' . a:bg[2] . '
-    \ gui='. a:type
+        \ ctermbg=' . a:bg[s:x] . ' guifg=' . a:fg[2] . ' guibg=' . a:bg[2] . '
+        \ gui='.a:type
     
 endfunction
 
@@ -61,9 +61,8 @@ Khi 'StatusLine',     s:none, s:lightgray, s:darkgray
 Khi 'StatusLineNC',   s:none, s:black,     s:darkgray
 
 Khi 'Search',         s:none, s:darkgray,  s:darkgreen
-Khi 'Visual',         s:none, s:no,        s:darkgray
+Khi 'Visual',         s:none, s:no,        s:darkblue
 
-Khi 'OverLength',     s:none, s:darkred,   s:no
 
 Khi 'MatchParen',     s:none, s:red, s:no
 Khi 'Folded',         s:none, s:darkmagenta, s:black
@@ -106,4 +105,6 @@ hi! link Todo Special
 hi! link File Special
 hi! link Title Special
 
-match OverLength /\%82v.*/
+
+hi OverLength ctermbg=8 guibg=#2F2F2F
+

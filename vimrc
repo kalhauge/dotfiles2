@@ -62,8 +62,9 @@ set expandtab
 
 nnoremap <leader>rh yypVr
 
+set nowrap
 set textwidth=79
-set formatoptions+=t
+set formatoptions-=t
 " execute "set colorcolumn=+" . join(range(1,200), ',+')
 " set colorcolumn=80
 
@@ -188,12 +189,26 @@ noremap <return> <c-]>
 
 inoremap <C-s> <ESC>:w<CR>a
 noremap  <C-s> :w<CR>
-inoremap <ESC> <NOP>
+" inoremap <ESC> <NOP>
 
 vnoremap <C-c> "+y
 vnoremap <C-a> "+p
 
 cnoremap <C-a> <C-b>
 
+autocmd BufEnter * match OverLength /\%81v.*/
+autocmd BufEnter * let w:long_line_match = 1
+ 
+fu! LongLineHighlightToggle()
+  highlight OverLength ctermbg=darkgrey guibg=#592929 
+  if exists('w:long_line_match') 
+    match OverLength //
+    unlet w:long_line_match
+  else 
+    match OverLength /\%81v.*/
+    let w:long_line_match = 1
+  endif
+endfunction
+noremap <Leader>l :call LongLineHighlightToggle()<CR>
+ 
 let g:syntastic_always_populate_loc_list = 1
-
