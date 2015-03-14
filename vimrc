@@ -114,8 +114,8 @@ noremap H ^
 noremap L g_
 
 " Fast stateshift
-ino jk <ESC>
-ino kj <ESC>
+" ino jk <ESC>
+" ino kj <ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git:
@@ -192,15 +192,25 @@ noremap  <C-s> :w<CR>
 " inoremap <ESC> <NOP>
 
 vnoremap <C-c> "+y
-vnoremap <C-a> "+p
+noremap <C-a> "+p
 
 cnoremap <C-a> <C-b>
+
+fu! Danify()
+    inoremap :: Æ
+    inoremap ;; æ
+    inoremap [[ å
+    inoremap {{ Å
+    inoremap '' ø
+    inoremap "" Ø
+endfunction
+
+noremap <Leader>d  :call Danify()<CR>
 
 autocmd BufEnter * match OverLength /\%81v.*/
 autocmd BufEnter * let w:long_line_match = 1
  
 fu! LongLineHighlightToggle()
-  highlight OverLength ctermbg=darkgrey guibg=#592929 
   if exists('w:long_line_match') 
     match OverLength //
     unlet w:long_line_match
@@ -211,4 +221,7 @@ fu! LongLineHighlightToggle()
 endfunction
 noremap <Leader>l :call LongLineHighlightToggle()<CR>
  
+
+
+
 let g:syntastic_always_populate_loc_list = 1

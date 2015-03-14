@@ -42,6 +42,8 @@ print "Done"
 
 [ -f ~/.profile ] && source ~/.profile
 
+bindkey -v
+
 # Enable fasd
 eval "$(fasd --init auto)"
 # Vim setup
@@ -76,3 +78,17 @@ then
    "$@"
    set --
 fi
+
+
+bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+export KEYTIMEOUT=1
+
+
