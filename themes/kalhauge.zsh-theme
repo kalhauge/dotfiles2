@@ -73,7 +73,7 @@ function info_line() {
 }
 
 function command_line() {
-  echo -n 'I> %{$reset_color%}'
+  echo -n '%(?,$GREEN,${RED})$ %{$reset_color%}'
 }
 
 PROMPT=$(print "$(info_line)\n$(command_line)")

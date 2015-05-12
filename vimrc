@@ -221,7 +221,7 @@ fu! LongLineHighlightToggle()
 endfunction
 noremap <Leader>l :call LongLineHighlightToggle()<CR>
  
-
+noremap m <C-i>
 
 
 let g:syntastic_always_populate_loc_list = 1
